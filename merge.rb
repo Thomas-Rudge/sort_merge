@@ -6,8 +6,8 @@ def merge_sort(list)
 
   list.length.times { |i| i < list.length/2 ? left << list[i] : right << list[i] }
 
-  left  = break_apart(left)  if left.length  > 1
-  right = break_apart(right) if right.length > 1
+  left  = merge_sort(left)  if left.length  > 1
+  right = merge_sort(right) if right.length > 1
 
   merge(left, right)
 end
